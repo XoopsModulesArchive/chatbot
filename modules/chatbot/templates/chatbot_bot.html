@@ -1,0 +1,111 @@
+<{$akali}>
+<script language="JavaScript" type="text/javascript" src="script/chatbot.js"></script>
+<{$eliza}>
+<script language="JavaScript" type="text/javascript" src="script/expandable.js"></script>
+
+        <{include file="db:chatbot_header.html"}>
+
+	<div    style="<{if $index_background}>background:url('<{$index_background}>') <{$back_color}>;
+		       height:<{$background_height}>px;
+                       width:<{$background_width}>px;<{/if}>
+		       border:inset <{$bot_text_color}>;
+		       <{if $text_color}>color:<{$text_color}>;<{/if}>
+                       padding:10px;">
+        <div align="right"><{include file="db:chatbot_media.html"}></div>
+        <div class="itemText"><{$textindex}></div><br />
+<!-- <body onunload="alert('backup.php?op=sav&data='+document.AI.rec_convo.value);" value="<{$report}>"> </body>  -->
+<form name="AI" onSubmit="return doAI();" action="" method="post">
+  <table cellpadding="5" cellspacing="5">
+  <tr>
+      <td colspan="2">
+              <b><{$bot_name}>:</b><br />
+              <textarea style="background:url('<{$text_background}>') <{$bot_back_color}> repeat top left;
+                               color: <{$bot_text_color}>; border:inset <{$bot_text_color}> <{$border_size}>; padding:5px;"
+                        cols="<{$text_width}>"
+			rows="<{$text_height}>"
+                        name="Bot"
+			type="texte"
+			wrap="virtual"><{$beginPhrase}></textarea><p />
+              <b><{$username}>:</b><br />
+              <input type="text" size="<{$text_width+20}>" name="User" />
+              <input type="hidden" name="rec_reply" />
+		   <a href="javascript: void(0);" onclick="pop=gotoLink('',1);">
+                   <img name="botLink" src="images/blank.gif" alt="<{$see_page}>" align="absmiddle" />
+                   </a>
+      </td>
+   </tr>
+   <tr>
+   <td style="vertical-align:top; text-align:left; width:50%;">
+   <!-- flooble Expandable Content box start -->
+<a title="show/hide"
+    id="selectimage_link"
+    href="javascript: void(0);"
+    onclick="toggle(this, 'selectimage');">[-]</a> <b><{$illustrations}></b>
+    <div id="selectimage">
+            <div style="vertical-align:middle; text-align:center;
+                          background-color:<{$bot_back_color}>;
+			  border:inset <{$bot_text_color}> <{$border_size}>;
+                          overflow:auto;
+                          height:<{$background_height/4}>px; width:<{$background_width/2-25}>px;">
+		   <a href="javascript: void(0);" onclick="pop=gotoImage();">
+                   <img name="botSmily" src="<{$botimage}>" alt="<{$bot_name}>" />
+                   </a>
+              </div>
+    <{if $botimage=='images/blank.gif'}><script type="text/javascript" language="javascript">toggle(getObject('selectimage_link'), 'selectimage');</script><{/if}>
+    <!-- flooble Expandable Content box end  -->
+    </div>
+<p />
+             
+<!-- flooble Expandable Content box start -->
+<a title="show/hide"
+    id="selectone_link"
+    href="javascript: void(0);"
+    onclick="toggle(this, 'selectone');">[-]</a> <b><{$historic}></b>
+    <div id="selectone">
+    <textarea style="background:url('<{$text_background}>') <{$bot_back_color}> repeat top left;
+                     color:<{$bot_text_color}>; border:inset <{$bot_text_color}> <{$border_size}>; padding:5px;"
+                     cols="42"
+		     rows="<{$text_height+15}>"
+                     name="rec_convo"
+		     value="rec_convo"
+                     type="texte"
+		     wrap="virtual">[<{$bot_name}> &gt;<{$beginPhrase}></textarea>
+    <div style="text-align:center;">
+              <input type="button"
+                     name="record_reply"
+                     value="<{$report}>"
+                     onclick="submit();" /> </div>
+	<script type="text/javascript" language="javascript">toggle(getObject('selectone_link'), 'selectone');</script>
+
+    <!-- flooble Expandable Content box end  -->
+    </div>
+      <td width="50%">
+    <!-- flooble Expandable Content box start -->
+<a title="show/hide"
+    id="selectopics_link"
+    href="javascript: void(0);"
+    onclick="toggle(this, 'selectopics');">[-]</a> <b><{$topics}></b>
+    <div class="itemText" id="selectopics">
+    <{$topic_info}>
+    <{$topic_list}>
+     <script type="text/javascript" language="javascript">toggle(getObject('selectopics_link'), 'selectopics');</script>
+     </div>
+    <!-- flooble Expandable Content box end  -->
+
+<!-- flooble Expandable Content box start -->
+<p /><a title="show/hide"
+    id="selectnotice_link"
+    href="javascript: void(0);"
+    onclick="toggle(this, 'selectnotice');">[-]</a> <b><{$notice}></b>
+    <div  class="itemText" id="selectnotice">
+    <{$instructions}>
+     <script type="text/javascript" language="javascript">toggle(getObject('selectnotice_link'), 'selectnotice');</script>
+     </div>
+    <!-- flooble Expandable Content box end  -->
+   </td>
+      </tr>
+   </table>
+   </form>
+</div>
+
+<{include file="db:chatbot_footer.html"}>

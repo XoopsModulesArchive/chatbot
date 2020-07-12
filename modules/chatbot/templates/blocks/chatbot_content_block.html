@@ -1,0 +1,49 @@
+<{$block.akali}>
+<script language="JavaScript" type="text/javascript" src="<{$xoops_url}>/modules/chatbot/script/chatbot.js"></script>
+<{$block.eliza}>
+<script language="JavaScript" type="text/javascript" src="<{$xoops_url}>/modules/chatbot/script/expandable.js"></script>
+
+<div align="right"><{include file="db:chatbot_media.html"}></div>
+
+  <div align="center">
+	<form name="AI" onSubmit="return doAI();" action="" method="post">
+              <{if $block.botimage}>
+              <div style="text-align:center;">
+                   <{$block.botimage}>
+              </div>
+              <{/if}>
+
+              <textarea style="background:<{if $block.text_background}>url('<{$block.text_background}>')<{/if}> <{$bot_back_color}> repeat top left;
+                               color: <{$block.bot_text_color}>; border:inset <{$block.bot_text_color}> <{$block.border_size}>;"
+                        	cols="<{$block.text_width}>"
+                                rows="<{$block.text_height}>"
+                        	name="Bot"
+				type="texte"
+				wrap="virtual"> <{$block.beginPhrase}>
+	      </textarea><br />
+
+              <div style="text-align:left; font-weight:bold;"><{$block.user_name}> :</div>
+              <input type="text" size="<{$block.text_width}>" name="User" />
+              <a href="javascript: void(0);" onclick="gotoLink('',1);">
+                   <img name="botLink" src="<{$xoops_url}>/modules/chatbot/images/blank.gif" alt="" align="absmiddle" />
+                   </a>
+              <input type="hidden" name="rec_reply" /><p />
+
+              <div style="text-align:left;">
+                    <a title="show/hide"
+                        id="blockone_link"
+                        href="javascript: void(0);"
+                        onclick="toggle(this, 'blockone');">-</a> <b><{$block.historic}></b>
+              </div>
+
+    <div id="blockone">
+              <textarea cols="20"
+        			 rows="<{$block.text_height+15}>"
+        			 name="rec_convo"
+        			 value="rec_convo"
+                                 type="texte"
+        			 wrap="virtual">[<{$block.botname}> &gt;<{$block.beginPhrase}></textarea>
+            </form>
+ <script type="text/javascript" language="javascript">toggle(getObject('blockone_link'), 'blockone');</script>
+ </div>
+  </div>

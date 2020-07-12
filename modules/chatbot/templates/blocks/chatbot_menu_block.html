@@ -1,0 +1,71 @@
+<{if $block.display_mode == "pic"}>
+<!-- Pictures -->
+
+<table>
+<tr>
+	<{foreach item=data from=$block.bots}>
+	<td width="<{$block.width}>%">
+		<{$data.image_link}>
+	</td>
+	<{counter print=false assign=count}>
+	<{if $count is div by $block.columns}>
+</tr>
+<tr align="center">
+	<{/if}>
+      <{/foreach}>
+</tr>
+</table>
+
+<{elseif $block.display_mode == "list"}>
+<!-- Ordered list -->
+<ul>
+	<{foreach item=data from=$block.bots}>
+	  <li><{$data.link}></li>
+	<{/foreach}>
+</ul>
+
+<{elseif $block.display_mode == "menu"}>
+<!-- Xoops Menu -->
+	<{counter start=0 print=false}>
+<table>
+<tr>
+<td id="mainmenu">
+      <{foreach item=data from=$block.bots}>
+	<{counter print=false assign=count}>
+      <a <{if $count == 1}>class="menuTop"<{else}>class="menuMain"<{/if}>
+		href="<{$data.link_url}>" 
+		title="<{$data.alt_description}>">
+		<{$data.bot_name}>
+	</a>
+<{/foreach}>
+</td>
+</tr>
+</table>
+
+<{elseif $block.display_mode == "ext"}>
+<!-- Extended table -->
+<table class="outer">
+  <tr class="head">
+	<th align="center" width="3%"><{$block.lang_num}></th>
+	<th align="center" width="20%"><{$block.lang_name}></th>
+	<th align="center" width="36%"><{$block.lang_description}></th>
+	<th align="center" width="36%"><{$block.lang_topics}></th>
+  </tr>
+
+<{foreach item=data from=$block.bots}>
+  <tr class="<{cycle values="even,odd"}>">
+	<td style="text-align:center;"><{$data.count}></td>
+	<td style="text-align:center;"><{$data.image_link}></td>
+	<td style="text-align:left; width:160px;"><{$data.description}></td>
+	<td><{$data.topics}></td>
+  </tr>
+<{/foreach}>
+</table>
+
+<{/if}>
+
+<{if $block.readmore}>
+	<br /><div align="right"><{$block.readmore}></div>
+<{/if}>
+
+

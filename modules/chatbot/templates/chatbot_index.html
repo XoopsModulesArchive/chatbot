@@ -1,0 +1,32 @@
+<{include file="db:chatbot_header.html"}>
+
+<div class="item">
+<div class="itemHead"><{$module_name}></div>
+<{if $textindex}><div class="itemText"><{$textindex}></div><{/if}>
+
+<{if $pagenav}><br /><div align="left"><{$page}> <{$pagenav}></div><br /><{/if}>
+
+<table class="outer">
+  <tr class="head">
+	<th align="center" width="3%"><{$lang_num}></th>
+	<th align="center" width="20%"><{$lang_name}></th>
+	<th align="center" width="36%"><{$lang_description}></th>
+	<th align="center" width="36%"><{$lang_topics}></th>
+ </tr>
+
+<{foreach item=bot from=$bots}>
+  <tr class="<{cycle values="even,odd"}>">
+	<td style="text-align:center;"><{$bot.count}></td>
+	<td style="text-align:center;"><{$bot.name}></td>
+	<td style="text-align:left; width:160px;"><{$bot.description}></td>
+	<td><{$bot.topics}></td>
+  </tr>
+<{/foreach}>
+</table>
+
+<{if $pagenav}>
+	<br /><div align="right"><{$page}> <{$pagenav}></div><br />
+<{/if}>
+</div>
+
+<{include file="db:chatbot_footer.html"}>

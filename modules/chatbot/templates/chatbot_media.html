@@ -1,0 +1,50 @@
+<{if $index_sound_background}>
+           <object             id="chatbot_bkg_player"
+                               enablejavascript="false"
+                               classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95"
+                               CODEBASE="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,5,715"
+                               standby="Loading..."
+                               type="application/x-oleobject"
+                               style="padding:5px;">
+            <param             name="chatbot_bkg_player" value="<{$index_sound_background}>">
+            <param             name="AutoStart" value="true">
+            <param             name="ShowTracker" value="false">
+            <param             name="Loop" value="true">
+            <param             name="PreBuffer" value="true">
+            <param             name="VideoBufferSize" value="9">
+
+            <embed             plugins="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/"
+                               src="<{$index_sound_background}>"
+                               name="chatbot_bkg_player"
+                               autostart="true"
+                               enabletracker="false"
+                               loop="true"
+                               enablejavascript="false"
+                               prebuffer="true" videobuffersize="9"
+                               width="60px"
+                               height="16px" 
+                               style="padding:5px;" />
+            </embed>
+            </object>
+<{/if}>
+
+<{if $text_sound_background}>
+        <objectID="player"
+                               enablejavascript="true"
+                               classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95" 
+                               CODEBASE="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,5,715"
+                               standby="Loading..."
+                               type="application/x-oleobject">
+            <param             name="type_sound"  value="<{$text_sound_background}>">
+            <param             name="AutoStart" value="false">
+
+            <embed             plugins="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/"
+                               src="<{$text_sound_background}>"
+                               name="type_sound"
+                               autostart="false"
+                               enablejavascript="true"
+                               width="0px"
+                               height="0px" />
+            </embed>
+            </object>
+<{/if}>

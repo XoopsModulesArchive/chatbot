@@ -1,0 +1,553 @@
+<head><meta http-equiv="description"
+content="La machine &agrave; insultes - cliquez ici pour vous faire insulter">
+<meta http-equiv="Keywords"
+content="insulte,machine,insultes,insulter,injure,offense,affront,camouflet,outrage,invective,attaque,avanie,impolitesse,insolence,sarcasme,pamphlet,
+vilénie,infamie,apostrophe,calomnie,indécence,haine,vengeance,fuck off">
+<title>La machine à insultes - Machine à Injurier</title>
+</head>
+<BODY><body bgcolor="#CCCCFF" link="orange" vlink="orange" alink="00FF95" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0>
+<HTML>
+<STYLE>
+<!--.nu {text-decoration: none; font-family: arial;}
+    A:link {text-decoration: underline; color: orange}
+    A:visited {text-decoration: underline; color: orange}
+    A:hover {text-decoration: underline; color: white}
+ -->
+</STYLE>
+<center>
+</center>
+<center>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+	
+
+
+
+var O=0
+var S=0
+var G=0
+var P=0
+var I=0
+var W=0
+var L=0
+var Insult=""
+var resolution=""
+
+
+
+function process()
+{
+
+BuildInsult()
+alert(Insult)
+}
+
+function BuildInsult(){
+currentdate = new Date ()
+seconds = currentdate.getSeconds()
+
+if (S==1)
+Insult = "Espèce de "  + Gender() + Political() + Intelligence() + Weight() + Looks() + "!!!!"
+else if (S==2)
+Insult = "Espèce de " + Gender() + Political() + Intelligence() + Weight() + Looks() + Ending() + "!!!!"
+else if(S==3)
+Insult = "Espèce de " + Gender() + RandomEnd() + Political() + Intelligence() + Weight() + Looks() + Ending() + "!!!!"
+else if (S==0)
+Insult = "Espèce de "  + Gender() + Political() + Intelligence() + Weight() + Looks() + "!!!!"
+}
+
+
+
+// Insult Code //
+
+
+
+function RandomMale(){
+	
+	if (seconds <6)
+		return "queue de verrat de "
+	else if (seconds <11)
+		return "froussard de "
+	else if (seconds <16)
+		return "sac à foutre de "
+	else if (seconds <21)
+		return "pine ambulante de "
+	else if (seconds <26)
+		return "vomi de tuberculeux de "
+	else if (seconds <31)
+		return "sangsue de "
+	else if (seconds <36)
+		return "limace de "
+	else if (seconds <41)
+		return "primate de "
+	else if (seconds <46)
+		return "gland puréfié de "
+	else if (seconds <51)
+		return "tête de noeud de "
+	else if (seconds <56)
+		return "branleur de "
+	else if (seconds <61)
+		return "bite qui pue de "
+}
+
+function RandomFemale(){
+
+	
+	if (seconds <6)
+		return "fendasse minable de "
+	else if (seconds <11)
+		return "sale punaise de "
+	else if (seconds <16)
+		return "tache de "
+	else if (seconds <21)
+		return "chienne de "
+	else if (seconds <26)
+		return "connasse de "
+	else if (seconds <31)
+		return "grognasse de "
+	else if (seconds <36)
+		return "crevure de "
+	else if (seconds <41)
+		return "pouffiasse de "
+	else if (seconds <46)
+		return "radasse de "
+	else if (seconds <51)
+		return "pétasse de "
+	else if (seconds <56)
+		return "garce de "
+	else if (seconds <61)
+		return "réceptacle à foutre de "
+	
+
+
+}
+
+function RandomNeutral(){
+
+	
+	if (seconds <6)
+		return "nullos à l‘haleine de cadavre "
+	else if (seconds <11)
+		return "chieur "
+	else if (seconds <16)
+		return "résidu de raie du cul "
+	else if (seconds <21)
+		return "tête d‘anus "
+	else if (seconds <26)
+		return "rien du tout "
+	else if (seconds <31)
+		return "gérontophile "
+	else if (seconds <36)
+		return "nécrophile "
+	else if (seconds <41)
+		return "coprophage "
+	else if (seconds <46)
+		return "pue-d‘la gueule "
+	else if (seconds <51)
+		return "crème d'idiot "
+	else if (seconds <56)
+		return "looser "
+	else if (seconds <61)
+		return "résidu de serviette hygiénique "
+	
+
+
+}
+
+function RandomDemocrat(){
+
+	
+	if (seconds <15)
+		return "gauchiste infantile "
+	else if (seconds <25)
+		return "sombre idéaliste de gauche "
+	else if (seconds <37)
+		return "socialiste immature "
+	else if (seconds <45)
+		return "communiste puéril "
+	else if (seconds <53)
+		return "soixantehuitard attardé "
+	else if (seconds <60)
+		return "marxiste jospino-trotzkiste "
+}
+
+function RandomRepublican(){
+
+
+	if (seconds <7)
+		return "conservateur borné "
+	else if (seconds <15)
+		return "fasciste bourgeois "
+	else if (seconds <24)
+		return "jean-marie lepéniste "
+	else if (seconds <38)
+		return "gros plein de fric "
+	else if (seconds <50)
+		return "richard affameur du peuple "
+	else if (seconds <60)
+		return "mondialiste nanti "
+}
+
+
+function RandomIndependent(){
+
+	if (seconds <12)
+		return "chasseur-pêcheur-poivroticulteur "
+	else if (seconds <20)
+		return "débilo-anarchiste "
+	else if (seconds <30)
+		return "centristo-indécis "
+	else if (seconds <44)
+		return "lamentable geignard  "
+	else if (seconds <57)
+		return "minable froussard "
+	else if (seconds <60)
+		return "castrat politique "
+}
+
+function RandomSmart(){
+
+
+	if (seconds <7)
+		return "chef de culture chez Jardiland "
+	else if (seconds <13)
+		return "cultureux-de-mes-deux "
+	else if (seconds <19)
+		return "philosophe-de-bistrot "
+	else if (seconds <25)
+		return "Einstein-à-la-petite-semaine "
+	else if (seconds <31)
+		return "cérébranleur "
+	else if (seconds <37)
+		return "génie-sans-brillant "
+	else if (seconds <43)
+		return "brillant-mais-terne "
+	else if (seconds <49)
+		return "arrogant j‘en-sais-plus-que-vous-tous "
+	else if (seconds <55)
+		return "monsieur je-sais-tout "
+	else if (seconds <61)
+		return "pseudo-intellectuel "
+	
+}
+
+function RandomStupid(){
+
+	
+	if (seconds <8)
+		return "nullité pisse-vinaigre "
+	else if (seconds <16)
+		return "zéro-du-neurone constipé "
+	else if (seconds <27)
+		return "cervelle en fromage blanc "
+	else if (seconds <36)
+		return "Monsieur-rien-dans-la-tête "
+	else if (seconds <45)
+		return "idiot déchet de l’humanité "
+	else if (seconds <56)
+		return "crétin des Alpes "
+	else if (seconds <60)
+		return "stupide pelle-à-merde "
+	else if (seconds <60)
+		return "triple buse dégénérée "
+	else if (seconds <60)
+		return "imbécile têtard à hublot "
+	else if (seconds <60)
+		return "arriéré bille de clown "
+	else if (seconds <60)
+		return "incapable tronche de cake "
+	else if (seconds <60)
+		return "trou du cul ahuri "
+	else if (seconds <60)
+		return "peine à jouir "
+}
+
+function RandomFat(){
+
+
+	if (seconds <5)
+		return "gros cul "
+	else if (seconds <11)
+		return "gras double "
+	else if (seconds <17)
+		return "gros(se) plein(e) de soupe "
+	else if (seconds <23)
+		return "bibendum "
+	else if (seconds <29)
+		return "corpulent "
+	else if (seconds <35)
+		return "obèse "
+	else if (seconds <42)
+		return "grosse vache "
+	else if (seconds <48)
+		return "goret "
+	else if (seconds <53)
+		return "culard "
+	else if (seconds <58)
+		return "verrat "
+	else if (seconds <61)
+		return "gros(se) cochon (truie) "
+
+
+}
+
+function RandomSkinny(){
+
+	if (seconds <12)
+		return "squelette "
+	else if (seconds <22)
+		return "famélique "
+	else if (seconds <30)
+		return "anorexique "
+	else if (seconds <43)
+		return "maigrichon(e) "
+	else if (seconds <52)
+		return "décharné(e) "
+	else if (seconds <60)
+		return "étique "
+}
+
+function RandomHot(){
+
+	if (seconds <13)
+		return "vaniteux "
+	else if (seconds <24)
+		return "orgueilleux "
+	else if (seconds <35)
+		return "arrogant "
+	else if (seconds <46)
+		return "égotiste "
+	else if (seconds <51)
+		return "infatué "
+	else if (seconds <60)
+		return "narcissique "
+	
+		
+}
+
+function RandomDog(){
+
+	if (seconds <8)
+		return "tête de cul "
+	else if (seconds <15)
+		return "laid à vomir "
+	else if (seconds <23)
+		return "dégueulasse "
+	else if (seconds <31)
+		return "abominable "
+	else if (seconds <41)
+		return "repoussant "
+	else if (seconds <49)
+		return "face de pus "
+  	else if (seconds <55)
+		return "résidu de fausse couche "
+ 	else if (seconds <60)
+		return "face de vomi "	
+}
+
+function RandomIntenseEnd(){
+
+	if (seconds <15)
+		return "qui pue de l'entrejambe "
+	else if (seconds <23)
+		return "raclure de bidet "
+	else if (seconds <29)
+		return "tu-pues-du-cul t'emmerdes-tout-le-monde "
+	else if (seconds <41)
+		return "nulliprout "
+	else if (seconds <52)
+		return "étron puant "
+	else if (seconds <60)
+		return "mangeur de caca "
+}
+
+function RandomEnd(){
+
+	if (seconds <15)
+		return "raclure de dessous de bras "
+	else if (seconds <23)
+		return "vermine innommable "
+	else if (seconds <29)
+		return "sous-merde abjecte "
+	else if (seconds <41)
+		return "fatras écoeurant "
+	else if (seconds <52)
+		return "renifleur de pet "
+	else if (seconds <60)
+		return "buveur de pipi "	
+}
+
+function General(){
+	if (S==1)
+	return ""
+	else if (S==2)
+	return "damn "
+	else if(S==3)
+	return RandomEnd()
+	else if (S==0)
+	return ""}
+
+function Gender(){
+	if (G==1)
+	return RandomMale()
+	else if (G==2)
+	return RandomFemale()
+	else if (G==3)
+	return RandomNeutral()
+	else if (G==0)
+	return RandomNeutral()}
+
+function Political(){
+	if (P==1)
+	return RandomDemocrat()
+	else if (P==2)
+	return RandomRepublican()
+	else if (P==3)
+	return RandomIndependent()
+	else if (P==0)
+	return ""}
+
+function Intelligence(){
+	if (I==1)
+	return RandomSmart()
+	else if (I==2)
+	return ""
+	else if (I==3)
+	return RandomStupid()
+	else if (I==0)
+	return ""}
+
+function Weight(){
+	if (W==1)
+	return RandomFat()
+	else if (W==2)
+	return ""
+	else if (W==3)
+	return RandomSkinny()
+	else if (W==0)
+	return ""}
+
+function Looks(){
+	if (L==1)
+	return RandomHot()
+	else if (L==2)
+	return ""
+	else if (L==3)
+	return RandomDog()
+	else if (L==0)
+	return ""}
+
+function Ending(){
+	return RandomIntenseEnd()
+	}
+
+<!--End-->
+</SCRIPT>
+</center><center>
+  <H4>Avant de te faire insulter, dis m'en un peu plus sur ta sinistre tronche 
+    de cake...</H4>
+
+  <TABLE width="500" BORDER ALIGN=center bordercolor="#990000" bgcolor="#FFFFFF">
+    <TR>
+
+      <TD width="33%">
+<H5>Niveau d'insulte que tu veux:</H5>
+        <FORM>
+          <INPUT TYPE="radio" NAME="Choice2" VALUE="suck"
+onClick="S = 1">
+          Pas mal fort<br>
+          <INPUT TYPE="radio" NAME="Choice2" VALUE="suck2"
+onClick="S = 2">
+          Fort<br>
+<INPUT TYPE="radio" NAME="Choice2" VALUE="suck3"
+onClick="S = 3">
+          Maximal<br>
+        </FORM>
+</TD>
+
+      <TD width="33%">
+<H5>Tu es un:</H5>
+
+<FORM><INPUT TYPE="radio" NAME="Choice" VALUE="man"
+onClick="G = 1">
+          Homme<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="woman"
+onClick="G = 2">
+          Femme<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="Unspecified"
+onClick="G = 3">
+          Travesti<br>
+        </FORM>
+</TD>
+
+      <TD width="33%">
+<H5>Ton affiliation politique:</H5>
+
+<FORM><INPUT TYPE="radio" NAME="Choice" VALUE="suck"
+onClick="P = 1">
+          de gauche<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="suck2"
+onClick="P = 2">
+          de droite<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="suck3"
+onClick="P = 3">
+          centriste<br>
+        </FORM>
+</TD></TR>
+
+<TR><TD><H5>ton intelligence:</H5>
+
+<FORM><INPUT TYPE="radio" NAME="Choice" VALUE="suck"
+onClick="I = 1">
+          Intelligent<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="suck2"
+onClick="I = 2">
+          Moyen<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="suck3"
+onClick="I = 3">
+          Stupide<br>
+        </FORM>
+</TD>
+
+<TD><H5>ton poids:</H5>
+
+<FORM><INPUT TYPE="radio" NAME="Choice" VALUE="suck"
+onClick="W = 1">
+          ob&egrave;se<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="suck2"
+onClick="W = 2">
+          normal<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="suck3"
+onClick="W = 3">
+          poids plume<br>
+        </FORM>
+</TD>
+
+<TD><H5>ta tronche:</H5>
+
+<FORM><INPUT TYPE="radio" NAME="Choice" VALUE="suck"
+onClick="L = 1">
+          pas mal<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="suck2"
+onClick="L = 2">
+          normal<br>
+<INPUT TYPE="radio" NAME="Choice" VALUE="suck3"
+onClick="L = 3">
+          d&eacute;gueu<br>
+        </FORM>
+</TD></TR></TABLE>
+
+<FORM>
+    <INPUT TYPE="button" VALUE="Vas-y envoie la sauce" NAME="InsultButton" onClick="process()">
+  </FORM>
+
+Si t'en veux encore, reclique sur le bouton face de rat<br>
+
+
+</td></tr>
+</table>
+</td></tr>
+</center>
+</body>
+</html>
